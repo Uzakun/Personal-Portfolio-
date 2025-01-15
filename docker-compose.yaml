@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  react:
+    build:
+      context: .
+      dockerfile: Dockerfile-react
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+    command: ["npm", "start"]
+
+  express:
+    build:
+      context: .
+      dockerfile: Dockerfile-express
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: production
+    command: ["node", "server.js"]

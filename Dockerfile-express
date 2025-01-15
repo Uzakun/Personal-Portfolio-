@@ -1,0 +1,17 @@
+FROM node:18-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files and install dependencies
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copy the server files
+COPY server.js ./server.js
+
+# Expose Express server port
+EXPOSE 5000
+
+# Start the Express server
+CMD ["node", "server.js"]
