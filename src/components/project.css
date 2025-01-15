@@ -1,0 +1,9 @@
+.project-card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.project-card-link .proj-txtx h4,
+.project-card-link .proj-txtx span {
+    color: white;
+}
