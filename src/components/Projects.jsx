@@ -1,14 +1,14 @@
-import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
+import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
+import TrackVisibility from "react-on-screen";
+import AiVidtoGIF from "../assets/img/AiVidtoGIF.png";
+import colorSharp2 from "../assets/img/color-sharp2.png";
 import projImg1 from "../assets/img/projImg1.jpeg";
 import projImg2 from "../assets/img/projImg2.png";
 import projImg3 from "../assets/img/projImg3.png";
 import projImg4 from "../assets/img/projImg4.jpeg";
-import colorSharp2 from "../assets/img/color-sharp2.png";
-import TrackVisibility from 'react-on-screen';
+import { ProjectCard } from "./ProjectCard";
 
 export const Projects = () => {
-
   const projectsFront = [
     {
       title: "Tasty Treasures",
@@ -28,7 +28,6 @@ export const Projects = () => {
       imgUrl: projImg4,
       link: "https://uzakun.github.io/tindog/",
     },
-
   ];
 
   const projectsMern = [
@@ -38,18 +37,18 @@ export const Projects = () => {
       imgUrl: projImg1,
       link: "https://github.com/Uzakun/Mindful-Pulse",
     },
-
   ];
 
   const projectsFull = [
     {
-
+      title: "AI Video to GIF",
+      description: "Transform videos into perfect GIFs with AI powered captions ✨",
+      imgUrl: AiVidtoGIF,
+      link: "https://vidtogif.work.gd/",
     },
-
   ];
 
-
-
+  
 
   return (
     <section className="project" id="projects">
@@ -57,73 +56,72 @@ export const Projects = () => {
         <Row>
           <Col size={12}>
             <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
                   <h2>Projects</h2>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <p>
+                    I've developed a diverse range of full-stack applications to solve real-world problems. For instance, I built an AI-powered tool that automatically generates captioned GIFs from videos based on simple text prompts. I also created a complete MERN stack mental health application to provide community support and mindfulness resources. Additionally, I engineered a visually appealing and fully responsive website, ensuring a seamless experience on any device.
+                  </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                    <Nav
+                      variant="pills"
+                      className="nav-pills mb-5 justify-content-center align-items-center"
+                      id="pills-tab"
+                    >
                       <Nav.Item>
-                        <Nav.Link eventKey="first">Frontend</Nav.Link>
+                        <Nav.Link eventKey="first">Full Stack</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
                         <Nav.Link eventKey="second">Mern Stack</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">Full Stack</Nav.Link>
+                        <Nav.Link eventKey="third">Frontend</Nav.Link>
                       </Nav.Item>
                     </Nav>
-                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                    <Tab.Content
+                      id="slideInUp"
+                      className={
+                        isVisible ? "animate__animated animate__slideInUp" : ""
+                      }
+                    >
                       <Tab.Pane eventKey="first">
                         <Row>
-                          {
-                            projectsFront.map((project, index) => {
-                              return (
-                                <ProjectCard
-                                  key={index}
-                                  {...project}
-                                />
-                              )
-                            })
-                          }
+                          {projectsFull.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
                         <Row>
-                          {
-                            projectsMern.map((project, index) => {
-                              return (
-                                <ProjectCard
-                                  key={index}
-                                  {...project}
-                                />
-                              )
-                            })
-                          }
+                          {projectsMern.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <Row>
-                          {
-                            projectsFull.map((project, index) => {
-                              return (
-                                <ProjectCard
-                                  key={index}
-                                  {...project}
-                                />
-                              )
-                            })
-                          }
+                          {projectsFront.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
                         </Row>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
-                </div>}
+                </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2} alt="background"></img>
+      <img
+        className="background-image-right"
+        src={colorSharp2}
+        alt="background"
+      ></img>
     </section>
-  )
-}
+  );
+};

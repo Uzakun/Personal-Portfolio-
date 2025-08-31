@@ -1,11 +1,9 @@
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import colorSharp from "../assets/img/color-sharp.png";
 import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
-import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {
   const responsive = {
@@ -35,7 +33,7 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>Proficient in JavaScript, Python, HTML, CSS, SQL, and NoSQL, with expertise in ReactJS, NodeJS, ExpressJS, and MongoDB. <br /> Skilled in tools like VS Code, Git, Figma, and AWS, delivering dynamic web development and seamless software solutions.</p>
+                        <p>Proficient in a comprehensive set of languages including JavaScript, TypeScript, Python, C++, SQL, and NoSQL. Expertise in modern frameworks and technologies such as ReactJS, Redux, NextJS, NodeJS, ExpressJS, MongoDB, and Tailwind CSS. Skilled in using a full suite of developer tools like VS Code, Git, GitHub, AWS, Figma, and Postman to deliver dynamic and seamless software solutions.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={meter1} alt="Image" />

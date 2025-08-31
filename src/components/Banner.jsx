@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
 import 'animate.css';
+import { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import TrackVisibility from 'react-on-screen';
+import headerImg from "../assets/img/header-img.svg";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -56,7 +56,7 @@ export const Banner = () => {
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm Shwetank Chandra`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Full Stack Developer", "Mern Stack Developer" "UI/ UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>B.Tech student in Electronics and Communication Engineering at Tezpur University, skilled in JavaScript, Python, HTML, CSS, SQL, and NoSQL. Proficient in ReactJS, NodeJS, ExpressJS, and MongoDB, with hands-on experience using tools like VS Code, Git, AWS, and Figma. Gained valuable experience as a Web Developer intern at the University of Edinburgh, excelling in web development, AI training, and crafting user-focused solutions.</p>
+                  <p>An Electronics and Communication Engineering student at Tezpur University  with a strong command of full-stack development. Skilled in languages like JavaScript, TypeScript, Python, SQL, and NoSQL , and proficient in modern frameworks including ReactJS, NextJS, NodeJS, and ExpressJS. Experience includes a Web Developer internship at the University of Edinburgh, where I developed a genome data visualization platform , and hands-on experience deploying full-stack AI applications using Nginx and Gunicorn on a Linux VPS.</p>
                   {/* <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button> */}
                 
               </div>}
